@@ -14,7 +14,7 @@ ARGS:
 
 ]]
 function SGD:__init(args)
-  self.W = torch.zeros(args.size+1) -- extra entry for the bias term
+  self.W = torch.zeros(args.size) -- extra entry for the bias term
   self.lr = args.lr or 0.0001
   self.grad = args.grad
   self.thresh = args.thresh or 0.0001

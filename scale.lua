@@ -2,10 +2,6 @@ require('torch')
 
 local NormalScaler = torch.class('NormalScaler')
 
-function NormalScaler:__init(args)
-  -- no-op constructor
-end
-
 --[[ Scale the 2-tensor `X` to have mean 0 and variance 1.
 
 ARGS:
