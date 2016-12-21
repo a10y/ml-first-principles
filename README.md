@@ -6,9 +6,9 @@ the concepts I've studied in graduate courses or on my own. This repo uses
 
 Here's a short list of the things implemented or on the docket:
 
-- [x] Vanilla SGD
-- [x] Scaling
-- [ ] Neural nets (basic feedforward, RNN)
-- [ ] Adam
-- [ ] Adagrad
+  - [x] Vanilla SGD
+  - [x] Scaling
+  - [ ] Neural nets (basic feedforward, RNN)
+  - [ ] Adam
+  - [ ] Adagrad
 
