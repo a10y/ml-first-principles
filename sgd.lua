@@ -18,6 +18,7 @@ function SGD:__init(args)
   self.lr = args.lr or 0.0001
   self.grad = args.grad
   self.thresh = args.thresh or 0.0001
+  self.miniters = args.miniters or 10
 end
 
 --[[ Train the weights of the linear model using SGD.
@@ -37,10 +38,9 @@ function SGD:train(X, y)
     grad = self.grad(self.W, point, label)
     self.W = self.W - self.lr * grad
     delta = grad:norm()
-    print('delta='..delta)
     if delta < self.thresh then
       count = count + 1
-      if count == 10 then
+      if count == self.miniters then
         break
       end
     else

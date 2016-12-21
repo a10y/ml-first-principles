@@ -8,9 +8,9 @@ function mseLoss(w, x, y)
 end
 
 -- Simple regression over 1-dimensional data
-linearModel = SGD.new{size=1, grad=mseLoss, eta=0.01, eps=0.001}
+linearModel = SGD.new{size=1, grad=mseLoss, eta=0.01, eps=0.001, miniters=100}
 
-numPoints = 10 -- number of points to generate for each model
+numPoints = 1000 -- number of points to generate for each model
 
 linearPoints = torch.Tensor(numPoints, 2)
 linearLabels = torch.Tensor(numPoints)
@@ -36,7 +36,7 @@ linearModel:train(linearPoints, linearLabels)
 print(linearModel.W)
 
 -- try predicting next thing
-p = torch.Tensor{1,50}
+p = torch.Tensor{1,500}
 -- should guess 48
 p:csub(off)
 p:cdiv(scale)
